@@ -31,7 +31,7 @@ jobs:
           ./gradlew clean build
 
       - name: 빌드된 jar 파일 이름 변경하기
-        run: mv ./build/lib/*-SNAPSHOT.jar ./app.jar
+        run: mv ./build/libs/*-SNAPSHOT.jar ./app.jar
 
       - name: EC2 에 jar 파일 전송(SCP 사용)
         uses: appleboy/scp-action@v0.1.7
@@ -52,7 +52,7 @@ jobs:
           script: |
             rm -rf /home/ubuntu/project-server/cur
             mkdir /home/ubuntu/project-server/cur
-            mv /home/ubuntu/project-server/cur/app.jar home/ubuntu/project-server/cur/app.jar
+            mv /home/ubuntu/project-server/tobe/app.jar /home/ubuntu/project-server/cur/app.jar
             cd /home/ubuntu/project-server/cur
             sudo fuser -k -n tcp 8080 || true
             sudo nohup java -jar app.jar > ./output.log 2>&1 &
