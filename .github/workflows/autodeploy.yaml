@@ -22,7 +22,7 @@ jobs:
       - name: application.yaml 파일 생성
         run: |
           mkdir -p src/main/resources
-          echo "${{ secrets.APPLICATION_YAML }}" > ./src/main/resources/application.yaml
+          echo "${{ secrets.APPLICATION_YML }}" > ./src/main/resources/application.yaml
           cat ./src/main/resources/application.yaml
 
       - name: jar 파일 빌드하기
