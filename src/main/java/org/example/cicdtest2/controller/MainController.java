@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
   @GetMapping("/")
   public String main() {
-    return "This is ciditest-03 자동배포";
+    return "This is ciditest-07 자동배포";
   }
   }
 
